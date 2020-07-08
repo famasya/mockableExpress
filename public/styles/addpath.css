@@ -15,24 +15,31 @@ body {
   background-color: #91c0dc1a;
 }
 
-.body-text{
+.body-text {
   padding-left: 32px;
 }
 
-.body-text textarea{
+.body-text textarea {
   overflow-x: auto;
-  white-space: nowrap;
 }
 
 .container {
-    width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    margin-right: auto;
-    margin-left: auto;
-  }
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
-.form{
-    padding: 30px;
+.form {
+  padding: 30px;
+}
+
+#editor {
+  width: 100%;
+}
+
+.CodeMirror {
+  font-size: 14px;
 }

@@ -22,7 +22,8 @@
           integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
           crossorigin="anonymous"
         ></script>
-    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/codemirror.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/addon/lint/lint.min.css">
         <link href="/admin/styles/addpath.css" rel="stylesheet" />
       </head>
   <body>
@@ -130,6 +131,7 @@
                 <label for="body" class="sr-only">Body</label>
                 <textarea
                     type="text"
+                    id="editor"
                     name="body"
                     placeholder=''
                     class="form-control" rows="15"><%=body%></textarea>
@@ -138,4 +140,16 @@
             </div>
         </form>
   </body>
+  <script src="https://unpkg.com/jshint@2.9.6/dist/jshint.js"></script>
+  <script src="https://unpkg.com/jsonlint@1.6.3/web/jsonlint.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/addon/edit/closebrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/addon/lint/lint.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/addon/lint/json-lint.min.js"></script>
+  <script>
+    var cm = new CodeMirror.fromTextArea(document.getElementById("editor"), { lineNumbers: true, autoCloseBrackets: true, mode: "application/json", gutters: ["CodeMirror-lint-markers"],
+        lint: true });
+    cm.setSize("100%", 350);
+  </script>
 </html>
